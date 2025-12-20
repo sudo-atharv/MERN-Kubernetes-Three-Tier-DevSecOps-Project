@@ -14,13 +14,13 @@ spec:
     - host: devopswithatharv.cloud
       http:
         paths:
-          - path: /api
+          - path: /
             pathType: Prefix
             backend:
               service:
-                name: api
+                name: frontend
                 port:
-                  number: 3500
+                  number: 3000
           - path: /healthz
             pathType: Exact
             backend:
@@ -42,10 +42,10 @@ spec:
                 name: api
                 port:
                   number: 3500
-          - path: /
+          - path: /api
             pathType: Prefix
             backend:
               service:
-                name: frontend
+                name: api
                 port:
-                  number: 3000
+                  number: 3500
